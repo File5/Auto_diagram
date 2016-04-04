@@ -7,6 +7,7 @@ public class DoWhileCycle extends Cycles{
 	
 	public DoWhileCycle() {
 		super(null, "");
+		ret = new DoWhileCycleReturning();
 	}
 	  
 		public DoWhileCycle(Block[] body, String line) {

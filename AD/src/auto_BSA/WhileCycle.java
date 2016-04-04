@@ -6,6 +6,7 @@ public class WhileCycle extends Cycles{
 	
 	public WhileCycle() {
 		super(null, "");
+		ret = new WhileCycleReturning();
 	}
 	  
 		public WhileCycle(Block[] body, String line) {

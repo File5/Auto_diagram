@@ -6,6 +6,7 @@ public class ForCycle extends Cycles {
 	
 	public ForCycle() {
 		super(null, "");
+		ret = new ForCycleReturning();
 	}
 
 	public ForCycle(Block[] body, String line) {

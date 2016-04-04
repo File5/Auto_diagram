@@ -35,7 +35,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 	"thereAReturnInElseBody",
 	"thereABreakInBody",
 	"thereAContinueInBody",
-	"thereAContinueInElseBody"
+	"thereAContinueInElseBody",
+	"ret"
 })
 public abstract class BlockMixIn {
 
