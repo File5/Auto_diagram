@@ -3,6 +3,10 @@ package auto_BSA;
 import java.awt.Graphics2D;
 
 public class ForCycle extends Cycles {
+	
+	public ForCycle() {
+		super(null, "");
+	}
 
 	public ForCycle(Block[] body, String line) {
 		super(body, line);

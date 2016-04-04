@@ -1,5 +1,6 @@
 package auto_BSA;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -24,6 +25,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @Type(value = SelectorBlock.class, name = "SelectorBlock"),
     @Type(value = Statement.class, name = "Statement"),
     @Type(value = WhileCycle.class, name = "WhileCycle")
+})
+@JsonIgnoreProperties(value = {
+	"HALFOFNORMALLENGHT",
+	"HALFOFNORMALHIGHT",
+	"THEBIGGESTLENGHT",
+	"thereABreakInElseBody",
+	"thereAReturnInBody",
+	"thereAReturnInElseBody",
+	"thereABreakInBody",
+	"thereAContinueInBody",
+	"thereAContinueInElseBody"
 })
 public abstract class BlockMixIn {
 

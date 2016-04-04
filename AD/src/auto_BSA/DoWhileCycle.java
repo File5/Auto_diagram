@@ -4,6 +4,10 @@ import java.awt.Graphics2D;
 import java.util.Iterator;
 
 public class DoWhileCycle extends Cycles{
+	
+	public DoWhileCycle() {
+		super(null, "");
+	}
 	  
 		public DoWhileCycle(Block[] body, String line) {
 			super(body, line);

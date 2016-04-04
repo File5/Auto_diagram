@@ -5,6 +5,10 @@ import java.awt.Graphics2D;
 public class Comment extends Statement {
 	Coords Coord;
 	MathExpression mathExp;
+	
+	public Comment() {
+		
+	}
 
 	public Comment(String line) {
 		super(line);

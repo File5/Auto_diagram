@@ -5,6 +5,10 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 public class IOBlock extends Statement {
+	
+	public IOBlock() {
+		
+	}
 
 	public IOBlock(String line) {
 		this.line = line;

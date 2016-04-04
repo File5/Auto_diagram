@@ -3,6 +3,10 @@ package auto_BSA;
 import java.awt.Graphics2D;
 
 public class FunctionCall extends Statement {
+	
+	public FunctionCall() {
+		
+	}
 
 	public FunctionCall(String line) {
 		super(line);

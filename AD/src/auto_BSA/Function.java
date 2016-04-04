@@ -8,6 +8,10 @@ import java.util.LinkedList;
 
 public class Function extends FunBlock {
 	static LinkedList<Comment> CommentList = new LinkedList<Comment>();
+	
+	public Function() {
+		super(null, "");
+	}
 
 	public Function(Block[] body, String line) {
 		super(body, line);

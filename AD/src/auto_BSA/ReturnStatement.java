@@ -5,6 +5,10 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
 public class ReturnStatement extends Statement {
+	
+	public ReturnStatement() {
+		
+	}
 
 	public ReturnStatement(String line) {
 		super(line);
