@@ -1,1 +1,7 @@
-/bin/
+bin/
+target/
+.idea/
+*.iml
+*.iws
+.project
+.settings
