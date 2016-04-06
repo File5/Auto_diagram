@@ -6,6 +6,10 @@ import java.util.Arrays;
 public class SelectorBlock extends FunBlock {
 	Block elsebody[];
 	private boolean isret = true;
+	
+	public SelectorBlock() {
+		super(null, "");
+	}
 
 	public SelectorBlock(Block[] body, String line, Block[] elsebody) {
 		super(body, line);

@@ -3,6 +3,10 @@ package auto_BSA;
 import java.awt.Graphics2D;
 
 public class Case extends FunBlock {
+	
+	public Case() {
+		super(null, "");
+	}
 
 	public Case(Block[] body, String line) {
 		super(body, line);

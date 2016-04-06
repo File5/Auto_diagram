@@ -3,6 +3,11 @@ package auto_BSA;
 import java.awt.Graphics2D;
 
 public class WhileCycle extends Cycles{
+	
+	public WhileCycle() {
+		super(null, "");
+		ret = new WhileCycleReturning();
+	}
 	  
 		public WhileCycle(Block[] body, String line) {
 			super(body, line);

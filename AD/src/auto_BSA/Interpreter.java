@@ -1,10 +1,17 @@
 package auto_BSA;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 public class Interpreter {
 	private static Set<String> keywords;
@@ -13,6 +20,7 @@ public class Interpreter {
 	private static Set<Pattern> ioFunctions;
 	private static Set<Pattern> typeConversions;
 	private static Set<Pattern> typeInParentheses;
+	private static ObjectMapper mapper;
 	private String code;
 	private int pos;
 	private int len;
@@ -70,6 +78,15 @@ public class Interpreter {
 		typeInParentheses.add(Pattern.compile("\\(\\s*const[\\s\\*]*\\)"));
 		typeInParentheses.add(Pattern.compile("\\(\\s*void[\\s\\*]*\\)"));
 		
+		mapper = new ObjectMapper();
+		mapper.setVisibilityChecker(
+			mapper.getSerializationConfig().getDefaultVisibilityChecker()
+			.withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+			.withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+			.withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+			.withCreatorVisibility(JsonAutoDetect.Visibility.NONE)									 
+		);
+		mapper.registerModule(new BlockMixInModule());
 	}
 	
 	private static boolean isKeyword(String str) {
@@ -273,6 +290,21 @@ public class Interpreter {
 	
 	public List<Block> analyze() {
 		return analyze("");
+	}
+	
+	public String toJson(String name) throws JsonProcessingException {
+		Block flowchart = analyze(name).toArray(new Block[0])[0];
+		return mapper.writeValueAsString(flowchart);
+	}
+	
+	public static String toJson(Block block) throws JsonProcessingException {
+		return mapper.writeValueAsString(block);
+	}
+	
+	public static List<Block> fromJson(String json) throws JsonParseException, JsonMappingException, IOException {
+		List<Block> block = new LinkedList<Block>();
+		block.add(mapper.readValue(json, Block.class));
+		return block;
 	}
 	
 	private List<Block> readBlock(String blockType) {
