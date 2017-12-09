@@ -20,7 +20,7 @@ public class DrawerSimple extends JFrame {
     
 		
         
-        setSize(1000, 2000);
+        setSize(1000, 3000);
       setLocationRelativeTo(null);
         
      

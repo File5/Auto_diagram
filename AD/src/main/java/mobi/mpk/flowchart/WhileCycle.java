@@ -33,8 +33,8 @@ public class WhileCycle extends Cycles{
 		} else {
 			drawCenteredLines(g2d, line, Coord.getX(), Coord.getY());
 		}
-		g2d.drawString("��", Coord.getX()+HALFOFNORMALLENGHT-HALFOFNORMALHIGHT-17, Coord.getY()+HALFOFNORMALHIGHT+7);
-		 g2d.drawString("���", Coord.getX()+HALFOFNORMALLENGHT-HALFOFNORMALHIGHT+30, Coord.getY()-HALFOFNORMALHIGHT+17);
+		g2d.drawString("да", Coord.getX()+HALFOFNORMALLENGHT-HALFOFNORMALHIGHT-17, Coord.getY()+HALFOFNORMALHIGHT+7);
+		 g2d.drawString("нет", Coord.getX()+HALFOFNORMALLENGHT-HALFOFNORMALHIGHT+30, Coord.getY()-HALFOFNORMALHIGHT+17);
 
 		nextArrow(Coord, g2d);
 
